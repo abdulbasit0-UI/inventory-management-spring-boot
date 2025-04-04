@@ -2,6 +2,7 @@ package com.inventory.inventory_management.Product;
 
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +23,7 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ProductResponseDto createProduct(@Valid @RequestBody ProductRequestDto productRequestDto) {
         return productService.createProduct(productRequestDto);
     }

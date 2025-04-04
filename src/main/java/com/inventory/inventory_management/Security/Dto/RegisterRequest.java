@@ -27,5 +27,5 @@ public class RegisterRequest {
 
     @NotBlank
     @Size(min = 2, message = "Full name must be at least 2 characters long")
-    private String FullName;
+    private String firstName;
 }
