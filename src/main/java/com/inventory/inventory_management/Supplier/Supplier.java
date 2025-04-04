@@ -2,6 +2,7 @@ package com.inventory.inventory_management.Supplier;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.inventory.inventory_management.Product.Product;
 
 import jakarta.persistence.Column;
@@ -9,7 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,6 +35,6 @@ public class Supplier {
     private String phoneNumber;
     private String email;
 
-    @ManyToMany(mappedBy = "suppliers", fetch = jakarta.persistence.FetchType.LAZY)
+    @OneToMany(mappedBy = "supplier")
     private Set<Product> products;
 }

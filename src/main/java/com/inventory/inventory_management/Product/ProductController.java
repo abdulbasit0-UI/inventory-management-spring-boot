@@ -3,7 +3,9 @@ package com.inventory.inventory_management.Product;
 import java.util.List;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +33,18 @@ public class ProductController {
     @GetMapping
     public List<ProductResponseDto> getAllProducts() {
         return productService.getAllProducts();
+    }
+
+    @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER') or hasRole('MANAGER')")
+    public ProductResponseDto getProductById(@PathVariable Long id) {
+        return productService.getProductById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public void deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
     }
     
 }

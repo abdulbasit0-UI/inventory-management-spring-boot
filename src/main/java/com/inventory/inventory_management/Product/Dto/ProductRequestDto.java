@@ -1,5 +1,6 @@
 package com.inventory.inventory_management.Product.Dto;
 
+
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -19,4 +20,5 @@ public class ProductRequestDto {
     private Integer quantity;
     private String description;
     private Long categoryId;
+    private Long supplierId; // Add this field for supplier relationship
 }

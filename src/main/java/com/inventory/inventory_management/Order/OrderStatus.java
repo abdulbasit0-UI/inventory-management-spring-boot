@@ -1,0 +1,8 @@
+package com.inventory.inventory_management.Order;
+
+public enum OrderStatus {
+    PENDING,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED
+}
