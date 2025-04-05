@@ -59,15 +59,10 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeRequests(auth -> auth.requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/public/**").permitAll()
-                        .requestMatchers("/", "/index.html", "/css/**", "/error",
-                                "/js/**", "/images/**", "/favicon.ico", "/webjars/**", "/login/**")
-
-                        .permitAll().anyRequest().authenticated()).formLogin(form -> form
-                                .loginPage("/login").loginProcessingUrl("/perform_login").defaultSuccessUrl("/").failureUrl("/login?error=true")
-                                .permitAll());
+                       .anyRequest().authenticated());
 
         http.authenticationProvider(authenticationProvider());
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
