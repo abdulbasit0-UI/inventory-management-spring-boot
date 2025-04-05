@@ -1,6 +1,7 @@
 package com.inventory.inventory_management.Product;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.math.BigDecimal;
+
 import com.inventory.inventory_management.Category.Category;
 import com.inventory.inventory_management.Supplier.Supplier;
 
@@ -30,7 +31,7 @@ public class Product {
     private String name;
 
     @Column
-    private Double price;
+    private BigDecimal price;
 
     @Column
     private Integer quantity;

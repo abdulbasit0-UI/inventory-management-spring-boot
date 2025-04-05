@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Index Page</title>
+</head>
+<body>
+    <div th:replace="~{layout :: layout}">
+        <div th:fragment="content">
+            <!-- Your page-specific content here -->
+            <h1>Welcome to the Inventory App</h1>
+            <p>This is the home page content.</p>
+        </div>
+    </div>
+</body>
+</html>
