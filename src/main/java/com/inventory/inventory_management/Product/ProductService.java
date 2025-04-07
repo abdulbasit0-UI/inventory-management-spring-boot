@@ -49,14 +49,14 @@ public class ProductService {
 
         Product savedProduct = productRepository.save(product);
         return new ProductResponseDto(savedProduct.getId(), savedProduct.getName(), savedProduct.getPrice(),
-                savedProduct.getQuantity(), savedProduct.getDescription(), savedProduct.getSupplier().getName());
+                savedProduct.getQuantity(), savedProduct.getDescription(), savedProduct.getSupplier().getName(), savedProduct.getCategory().getName());
     }
 
     @Transactional(readOnly = true)
     public List<ProductResponseDto> getAllProducts() {
         List<Product> products = productRepository.findAll();
         return products.stream().map(product -> new ProductResponseDto(product.getId(), product.getName(),
-                product.getPrice(), product.getQuantity(), product.getDescription(), product.getSupplier().getName()))
+                product.getPrice(), product.getQuantity(), product.getDescription(), product.getSupplier().getName(), product.getCategory().getName()))
                 .toList();
     }
 
@@ -64,7 +64,7 @@ public class ProductService {
     public ProductResponseDto getProductById(Long id) {
         Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
         return new ProductResponseDto(product.getId(), product.getName(), product.getPrice(), product.getQuantity(),
-                product.getDescription(), product.getSupplier().getName());
+                product.getDescription(), product.getSupplier().getName(), product.getCategory().getName());
     }
 
     @Transactional

@@ -49,7 +49,12 @@ public class AuthService {
                 .map(item -> item.getAuthority())
                 .toArray(String[]::new);
 
-        return AuthResponse.builder().token(jwt).username(userDetails.getUsername()).roles(roles).build();
+        return AuthResponse.builder().token(jwt).username(userDetails.getUsername()).userId(userDetails.getId())
+                .firstName(userDetails.getFirstName()).email(userDetails.getEmail()).roles(roles).build();
+    }
+
+    public boolean validateToken(String token) {
+        return jwtUtils.validateJwtToken(token);
     }
 
     @Transactional

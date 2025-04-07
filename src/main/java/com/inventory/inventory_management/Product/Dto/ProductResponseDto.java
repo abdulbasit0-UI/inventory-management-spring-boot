@@ -14,4 +14,5 @@ public class ProductResponseDto {
         private Integer quantity;
         private String description;
         private String supplierName;
+        private String categoryName;
 }
