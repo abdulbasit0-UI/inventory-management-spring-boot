@@ -125,14 +125,13 @@ src/
 ├── main/
 │   ├── java/com/yourusername/inventory/
 │   │   ├── config/           # Configuration classes
-│   │   ├── controller/       # REST controllers
-│   │   ├── dto/              # Data Transfer Objects
-│   │   ├── exception/        # Custom exceptions
-│   │   ├── model/            # Entity classes
-│   │   ├── repository/       # Data access layer
+│   │   ├── Category/       # Category Module
+│   │   ├── Supplier/              # Supplier Module
+│   │   ├── exception/        #  Exceptions
+│   │   ├── User/            # User Module
+│   │   ├── Order/       # Order Module
 │   │   ├── security/         # Security configuration
-│   │   ├── service/          # Business logic
-│   │   └── InventoryApplication.java
+│   │   └── InventoryManagementApplication.java
 │   └── resources/
 │       ├── application.yml   # Application properties
 │       └── data.sql          # Initial data
