@@ -198,8 +198,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [your.email@example.com](mailto:your.email@example.com)
+Your Name - [your.email@example.com](mailto:habdulbasit51@gmail.com)
 
-Frontend Repository: [https://github.com/yourusername/inventory-management-frontend](https://github.com/yourusername/inventory-management-frontend)
+Frontend Repository: [https://github.com/abdulbasit0-UI/spring-react-frontend](https://github.com/abdulbasit0-UI/spring-react-frontend)
 
-Project Link: [https://github.com/yourusername/inventory-management-system](https://github.com/yourusername/inventory-management-system)
+Project Link: [https://github.com/abdulbasit0-UI/inventory-management-spring-boot](https://github.com/abdulbasit0-UI/inventory-management-spring-boot)
