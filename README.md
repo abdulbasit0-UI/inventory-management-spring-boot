@@ -62,7 +62,7 @@ A robust, secure inventory management system built with Spring Boot and React. T
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/inventory-management-system.git
+   git clone git@github.com:abdulbasit0-UI/inventory-management-spring-boot.git
    cd inventory-management-system
    ```
 
@@ -81,7 +81,7 @@ A robust, secure inventory management system built with Spring Boot and React. T
 
 1. **Clone the frontend repository**
    ```bash
-   git clone https://github.com/yourusername/inventory-management-frontend.git
+   git clone git@github.com:abdulbasit0-UI/spring-react-frontend.git
    cd inventory-management-frontend
    ```
 
@@ -112,8 +112,6 @@ SPRING_DATASOURCE_PASSWORD=yourpassword
 JWT_SECRET=your_very_secure_jwt_secret_key
 JWT_EXPIRATION_MS=86400000
 
-# Frontend
-VITE_API_BASE_URL=http://localhost:8080/api
 ```
 
 ## 🏗️ Project Structure
@@ -153,43 +151,19 @@ src/
 └── App.jsx         # Root component
 ```
 
-## 📚 API Documentation
-
-API documentation is available at `http://localhost:8080/swagger-ui.html` when the application is running.
 
 Key endpoints:
 
-- **Authentication**: `/api/auth/**`
-- **Users**: `/api/users/**`
-- **Products**: `/api/products/**`
-- **Categories**: `/api/categories/**`
-- **Inventory**: `/api/inventory/**`
-- **Reports**: `/api/reports/**`
+- **Authentication**: `/api/v1/cauth/**`
+- **Users**: `/api/v1/users/**`
+- **Products**: `/api/v1/products/**`
+- **Categories**: `/api/v1/categories/**`
+- **Inventory**: `/api/v1/suppliers/**`
+- **Reports**: `/api/v1/orders/**`
 
-## 🧪 Testing
 
-### Backend Tests
 
-```bash
-# Run all tests
-mvn test
 
-# Run unit tests only
-mvn test -Dtest=*UnitTest
-
-# Run integration tests
-mvn test -Dtest=*IntegrationTest
-```
-
-### Frontend Tests
-
-```bash
-# Run all tests
-npm test
-
-# Run with coverage
-npm test -- --coverage
-```
 
 ## 🚀 Deployment
 
@@ -200,16 +174,6 @@ The application can be deployed as a JAR file:
 ```bash
 mvn clean package
 java -jar target/inventory-management-1.0.0.jar
-```
-
-### Docker Deployment
-
-```bash
-# Build the Docker image
-docker build -t inventory-management:latest .
-
-# Run the container
-docker run -p 8080:8080 inventory-management:latest
 ```
 
 ## 🛣️ Roadmap
