@@ -145,17 +145,16 @@ src/
 ├── context/        # React context providers
 ├── hooks/          # Custom hooks
 ├── pages/          # Application pages
-├── services/       # API service layer
-├── store/          # Redux store
-├── utils/          # Helper functions
+├── api/       # API service layer
+├── types/          # types for typescript
+├── lib/          # Helper functions
 └── App.jsx         # Root component
 ```
 
 
 Key endpoints:
 
-- **Authentication**: `/api/v1/cauth/**`
-- **Users**: `/api/v1/users/**`
+- **Authentication**: `/api/v1/auth/**`
 - **Products**: `/api/v1/products/**`
 - **Categories**: `/api/v1/categories/**`
 - **Inventory**: `/api/v1/suppliers/**`
